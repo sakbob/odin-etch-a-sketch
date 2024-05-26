@@ -1,4 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: slateblue;
+}
+
 #container {
+    background-color: white;
     margin-right: auto;
     margin-left: auto;
     display: flex;
@@ -9,4 +17,15 @@
 
 .square {
     flex-shrink: 0;
+}
+
+.size-button {
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-self: center;
+    margin-bottom: 3px;
+    background-color: aqua;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 3px;
 }
