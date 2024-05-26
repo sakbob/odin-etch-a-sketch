@@ -1,4 +1,4 @@
-const container = document.querySelector("#container");
+const container = document.querySelector(".canvas-container");
 let gridSize = 16;
 let numGrids = 960 / gridSize;
 
@@ -8,6 +8,7 @@ function createGrid() {
         div.classList.add("square");
         div.style.height = numGrids + "px";
         div.style.width = numGrids + "px";
+        div.style.opacity = 0;
         container.appendChild(div);
     }
 }
@@ -16,7 +17,12 @@ function listener() {
     const box = document.querySelectorAll(".square");
     box.forEach(square => {
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "black";
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+            
+            square.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+            square.style.opacity = Number(square.style.opacity) + 0.1;
         })
     })
 }
