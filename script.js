@@ -43,9 +43,12 @@ createGrid();
 listener();
 
 
-const but = document.querySelector(".size-button");
+const sizeBut = document.querySelector(".size-button");
+const resetBut = document.querySelector(".reset-button");
+const transparentBut = document.querySelector(".transparent-button");
+const rainbowBut = document.querySelector(".rainbow-button");
 
-but.addEventListener("click", () => {
+sizeBut.addEventListener("click", () => {
     while (1) {
         let tempGridSize = Number(prompt("How many squares per side would you like? (Max 100): "));
 
@@ -62,3 +65,17 @@ but.addEventListener("click", () => {
         break;
     }
 })
+
+resetBut.addEventListener("click", () => {
+    container.replaceChildren();
+    createGrid();
+    listener();
+});
+
+transparentBut.addEventListener("click", () => {
+    transparentMode = !transparentMode;
+});
+
+rainbowBut.addEventListener("click", () => {
+    rainbowMode = !rainbowMode;
+});
