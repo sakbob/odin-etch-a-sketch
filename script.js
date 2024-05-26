@@ -31,7 +31,7 @@ but.addEventListener("click", () => {
     while (1) {
         let tempGridSize = Number(prompt("How many squares per side would you like? (Max 100): "));
 
-        if (tempGridSize == null || tempGridSize === NaN || tempGridSize > 100) {
+        if (tempGridSize == null || isNaN(tempGridSize) || tempGridSize > 100 || tempGridSize < 1) {
             alert("Please enter a valid number (Max 100)");
             continue;
         }
