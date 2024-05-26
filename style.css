@@ -1,0 +1,12 @@
+#container {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid black 2px;
+    max-width: 960px;
+}
+
+.square {
+    flex-shrink: 0;
+}
