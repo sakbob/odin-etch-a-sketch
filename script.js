@@ -1,6 +1,8 @@
 const container = document.querySelector(".canvas-container");
 let gridSize = 16;
 let numGrids = 960 / gridSize;
+let transparentMode = false;
+let rainbowMode = false;
 
 function createGrid() {
     for (let i = 0; i < (gridSize ** 2); i++) {
@@ -17,12 +19,22 @@ function listener() {
     const box = document.querySelectorAll(".square");
     box.forEach(square => {
         square.addEventListener("mouseover", () => {
-            let red = Math.floor(Math.random() * 256);
-            let green = Math.floor(Math.random() * 256);
-            let blue = Math.floor(Math.random() * 256);
-            
-            square.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
-            square.style.opacity = Number(square.style.opacity) + 0.1;
+            if (rainbowMode) {
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                square.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+            }
+            else {
+                square.style.backgroundColor = "black";
+            }
+
+            if (transparentMode) {
+                square.style.opacity = Number(square.style.opacity) + 0.1;
+            }
+            else {
+                square.style.opacity = 1;
+            }
         })
     })
 }
